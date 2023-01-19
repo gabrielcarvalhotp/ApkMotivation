@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueDark"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_all"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/icon_all_inclusive"
+             />
+
+        <ImageView
+            android:id="@+id/image_happy"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/icon_happy" />
+
+        <ImageView
+            android:id="@+id/image_sunny"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@drawable/icon_sunny" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hello_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cabin"
+        android:text="@string/hello_kotlin"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_phrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/cabin"
+        android:gravity="center"
+        android:text="@string/phrase_text"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_new_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/blueDark"
+        android:fontFamily="@font/cabin"
+        android:text="@string/new_phrase" />
+
+    <View
+        android:layout_width="128dp"
+        android:layout_height="4dp"
+        android:layout_below="@id/text_phrase"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="32dp"
+        android:background="@color/blueDark" />
+
+
+</RelativeLayout>

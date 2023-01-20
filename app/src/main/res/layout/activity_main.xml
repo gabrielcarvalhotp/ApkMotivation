@@ -49,7 +49,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/cabin"
-        android:text="@string/hello_kotlin"
+        android:text="@string/hello"
         android:textSize="20sp" />
 
     <TextView
@@ -59,7 +59,7 @@
         android:layout_centerInParent="true"
         android:fontFamily="@font/cabin"
         android:gravity="center"
-        android:text="@string/phrase_text"
+        android:text="@string/phrase"
         android:textSize="22sp"
         android:textStyle="bold" />
 

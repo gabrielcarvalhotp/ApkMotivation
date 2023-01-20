@@ -11,11 +11,13 @@ import com.example.motivation.infra.MotivationConstantes
 import com.example.motivation.R
 import com.example.motivation.infra.SecurityPreferences
 import com.example.motivation.databinding.ActivityMainBinding
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), OnClickListener {
     private lateinit var bind: ActivityMainBinding
     private var categoryId = MotivationConstantes.FILTER.ALL
 
+// Criada, Inicializada, Resmida, Utilizada, Pausada, Parada, Destruida
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bind = ActivityMainBinding.inflate(layoutInflater)
@@ -23,10 +25,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
         //Retirando a barra
         supportActionBar?.hide()
-
-        handleFilter(R.id.image_all)
-        handleSave()
-        handleNewPhrase()
 
         //Evento de Click
         bind.buttonNewPhrase.setOnClickListener { handleNewPhrase() }
@@ -41,8 +39,16 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        handleFilter(R.id.image_all)
+        handleSave()
+        handleNewPhrase()
+    }
+
     private fun handleNewPhrase() {
-        bind.textPhrase.text = Mock().getPhrase(categoryId)
+        val language = Locale.getDefault().language
+        bind.textPhrase.text = Mock().getPhrase(categoryId, language)
     }
 
     private fun handleFilter(id: Int) {
@@ -79,6 +85,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         val userName =
             SecurityPreferences(this).getSecurityString(MotivationConstantes.KEY.USER_NAME)
 
-        bind.helloUser.text = "Olá, $userName!"
+        bind.helloUser.text = "${getString(R.string.hello)}, $userName!"
     }
 }

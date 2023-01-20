@@ -47,7 +47,7 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
-            Toast.makeText(this, R.string.validation_name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()
         }
     }
 }
